@@ -3,4 +3,9 @@ body
     background-color: black;
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    
+}
+h1 {
+    font-size: 25px;
 }

@@ -4,34 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArteTattoo/index</title>
+    <title>RespiMedic/index</title>
     <link rel="stylesheet" href="css/estilos.css">
-    <script defer src="js/main.js"></script>
+    <script  src="js/claseproductos.js"></script>
+    <script  src="js/main.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>ArteTattoo</h1>
-        <h2>Consulta sobre tu proxima eleccion de tatuajes</h2>
-        <p>Selecciona el tamaño y tipo del tatoo que quieres. Luego confirma el turno que deseas para venir a visitarnos.</p>
-        <div class="tatuaje">
-            <h3>Tamaños</h3>
-            <ul>
-                <li>Pequeño</li>
-                <li>Mediano</li>
-                <li>Grande</li>
-            </ul>
-            <h3>Tipos</h3>
-            <ul>
-                <li>Realismo</li>
-                <li>Old School</li>
-                <li>New School</li>
-                <li>Anime</li>
-            </ul>   
-            <h3>Turnos</h3>
-            <input type="date">
-            <input type="submit" value="Submit">
+    <main class="Productos">
+        <div class="Tratmiento">
+            <h1>Tratmiento</h1>
+            <div class="tratamientos">
+                <li>Equipo AutoCPAP</li>
+                <li>Equipo Flujo continuo</li>
+                <li>Equipo Binivel</li>       
+            </div>
         </div>
-        <p>Ejecuta <strong>DevTools</strong>, y escribe en la consola JS la función: <strong>consultarTatuaje()</strong></p>
-    </div>
+        <div class="Mascaras">
+            <h1>Mascaras</h1>
+            <div class="mascaras_tipo">
+                <li>Mascaras Oronasal </li>
+                <li>Mascaras Nasal</li>
+                <li>Mascaras Totalface</li>
+            </div>   
+        </div>
+        <div>
+            <button class="button button-agregar">AGREGAR PRODUCTOS</button>
+            <button class="button button-buscar">BUSCAR PRODUCTOS</button>
+            <button class="button button-borrar">QUITAR PRODUCTOS</button>
+            <button class="button button-filtrar">FILTRAR PRODUCTOS POR MARCA</button>
+            <button class="button button-filtrar">FILTRAR PRODUCTOS POR CATEGORIA</button>
+        </div>
+    </main>
 </body>
 </html>
