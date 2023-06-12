@@ -5,6 +5,38 @@ const productos = [{id: 12345, nombre: "MASCARA ORONASAL S ", marca: "RESMED" , 
                    {id: 90126, nombre: "AIRSENSE 10 AUTOSET", marca: "RESMED", importe: 100_000, categoria: "EQUIPOS AUTOCPAP"},
                    {id: 90127, nombre: "DREAM STATION", marca: "PHILIPS", importe: 150_000, categoria: "EQUIPOS AUTOCPAP"}]
 const creoID = ()=> parseInt(Math.random() * 100_000)
+alert("Ahora veras los productos")
+console.table(productos)
+function Inicio() {
+    let respuesta = confirm("¿Eres cliente?")
+    if (respuesta === true) {
+        Eleccion()
+    }else {alert("Ingresa usuario y cotraseña")
+    agregarProducto() 
+    }  
+}
+Inicio()
+function Eleccion() {
+    let respuesta = prompt("¿Selecciona la opcion correcta para buscar tu producto a) id - b) Categoria - c) Marca?").toUpperCase()
+    if (respuesta === false) {
+        Eleccion()
+    }else 
+    switch (respuesta) {
+        case "A": alert("Elegiste buscar por ID")
+        buscarUnProducto()
+            break;
+        case "B": alert("Elegiste buscar por categoria")
+        filtrarProductosCategoria()
+            break;
+        case "C": alert("Elegiste buscar por Marca")
+        filtrarProductosMarca()
+            break;
+        default: alert("No entendimos tu respuesta. Vuelve a intentar")
+                 Eleccion()
+            break;
+    }
+}
+
 function agregarProducto() {
                     let id = creoID()
                     let nombre = prompt("Nombre del producto: ").toUpperCase()
@@ -29,22 +61,26 @@ function buscarUnProducto() {
     const resultado = productos.find((producto)=> producto.id === parseInt(param))   
     if (resultado === undefined){ 
         console.warn("No corresponde a un producto")
+        buscarUnProducto()
     }
     else { 
        alert("Encontramos : " + resultado.nombre)
+       let respuesta = confirm("¿Deseas ir a comprar?")
+       if (respuesta === true) {
+           comprar()
+           }else Eleccion()
     }
 }
 function quitarProducto() {
     let param = prompt("ingresa el ID del producto a quitar")
-    let indice = productos.findIndex((producto)=> producto.id === parseInt(param))
+    let indice = carrito.findIndex((producto)=> producto.id === parseInt(param))
     if (indice > -1 ) { 
-        productos.splice(indice, 1)
+        carrito.splice(indice, 1)
         recorrerProductos()
     }else{
         console.warn("No se encontro el producto indicado: ", param)
     }
 }
-
 function filtrarProductosCategoria() { 
     let param = prompt("Ingrese la categoria del producto: ").toUpperCase() 
     const resultado = productos.filter((producto)=> producto.categoria === (param) )
@@ -52,6 +88,10 @@ function filtrarProductosCategoria() {
         console.warn("La categoria no existe. Vuelva a intentarlo")
     }else {
         console.table(resultado)
+        let respuesta = confirm("¿Deseas ir a comprar?")
+        if (respuesta === true) {
+            comprar()
+            }else Eleccion()
     }
 } 
 function filtrarProductosMarca() { 
@@ -61,6 +101,10 @@ function filtrarProductosMarca() {
         console.warn("La marca no existe. Vuelva a intentarlo")
     }else {
         console.table(resultado)
+        let respuesta = confirm("¿Deseas ir a comprar?")
+        if (respuesta === true) {
+            comprar()
+            }else Eleccion()
     }
 } 
 function finalizarCompra() {
@@ -76,11 +120,16 @@ function comprar() {
            alert(productoSeleccionado.nombre + "de la marca " + productoSeleccionado.marca +  " se cargo al carrito de compras con exito") 
            let respuesta = confirm("¿ Deseas comprar otro producto ?")
            if (respuesta === true ) {
-               comprar() 
+               Eleccion() 
            }else {
-               finalizarCompra()
+                let finalizar = confirm("¿Desea quitar algun producto del carrito?")
+                if (finalizar === true) {
+                    quitarProducto()
+                    alert("Se retiro el producto seleccionado")
+                } else finalizarCompra()
            } 
        }else {
            alert("Error en el codigo selecionado. Vuelva a intentar")
+           Eleccion()
        }
    }
