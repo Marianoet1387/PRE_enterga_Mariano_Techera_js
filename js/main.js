@@ -37,16 +37,21 @@ function buscarUnProducto() {
     const resultado = productos.find((producto)=> producto.id === parseInt(param))   
     if (resultado === undefined){ 
         console.warn("No corresponde a un producto")
+        buscarUnProducto()
     }
     else { 
        alert("Encontramos : " + resultado.nombre)
+       let respuesta = confirm("¿Deseas ir a comprar?")
+       if (respuesta === true) {
+           comprar()
+           }else Eleccion()
     }
 }
 function filtrarProductosCategoria() { 
     let param = prompt("Ingrese la categoria del producto: ").toUpperCase() 
     const resultado = productos.filter((producto)=> producto.categoria === (param) )
-    resultado.length === 0 ?  console.warn("La categoria no existe. Vuelva a intentarlo") : console.table(resultado)
-} 
+    resultado.length === 0 ?  console.warn("La categoria no existe. Vuelva a intentarlo") : console.table(resultado) 
+}
 function filtrarProductosMarca() { 
     let param = prompt("Ingrese la marca del producto: ").toUpperCase() 
     const resultado = productos.filter((producto)=> producto.marca === (param) )
