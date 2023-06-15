@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RespiMedic/checkout</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="/js/variables.js"></script>
+    <script defer src="js/checkout.js"></script> <!-- NO OLVIDARSE DEL "defer" ya que primero necesita diferir el main.js para leer el html--> 
+</head> 
+<body>
+    <header>
+        <div class="log-carrito">
+            <a href="checkout.html"><img id="logo" class="logo"></a>
+        </div>
+        <img src="./img/icon.png" alt="">
+        <div class="header" id="header">
+            <img id="logo" class="logo" >
+            <h1 id="titulo">RespiMedic</h1>
+            <h2 id="slogan">Tienda online de productos</h2>
+            <div class="carrito">
+                <p>Carrito:<span>0</span></p>
+            </div>
+           <!-- <input type="text" id="inputNombre">
+            <button id="btnLocalStorage">LS</button>l --> 
+        </div>
+    </header>
+    <main>
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th id="tablehead">Producto</th>
+                        <th id="tablehead">Descripción</th>
+                        <th id="tablehead">Importe</th>
+                        <th id="tablehead">Quitar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- className  <tr>    SE SACO PORQUE ESTA DESDE JS
+                        <td>Aquí</td>
+                        <td>verás</td>
+                        <td>productos</td>
+                        <td><img src="images/clothes.png" width="30px"></td>
+                    </tr>--> 
+                </tbody>
+            </table>
+        </section>
+        <div class="centrar-div">
+            <button class="button" id="btnComprar">COMPRAR</button>
+        </div>
+    </main>
+</body>
+</html>

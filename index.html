@@ -6,34 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RespiMedic/index</title>
     <link rel="stylesheet" href="css/estilos.css">
-    <script  src="js/claseproductos.js"></script>
-    <script  src="js/main.js"></script>
+    <script src="js/variables.js"></script>
+    <script defer src="js/main.js"></script>
 </head>
 <body>
-    <main class="productos">
-        <div class="tratmiento">
-            <h1>Tratmiento</h1>
-            <div class="tratamientos">
-                <li>Equipo AutoCPAP</li>
-                <li>Equipo Flujo continuo</li>
-                <li>Equipo Binivel</li>       
+    <header>
+        <div class="logo-carrito">
+            <a href="../checkout.html"><!-- NO OLVIDARSE DEL de cambiar esto en el js--> 
+                <img id="logo" class="logo">
+            </a>
+        </div>
+        <div class="header" id="header">
+            <img id="logo" class="logo">
+            <h1 id="titulo">Productos Medicinales respiratorios</h1>
+            <h2 id="slogan">Respirar mejor</h2>
+            <div class="carrito">
+                <p id="carrito">Carrito:<span>0</span></p>
+            </div>
+        </div>  
+    </header>
+    <main> 
+        <div class="contenedor_filtros">
+            <div class="contenedor_filtrar_categoria">
+                <label for="categoria">Filtrar por categoria</label>
+                <select id="categoria">
+                        <option selected disabled>...</option>
+                </select>
+            </div>
+            <div class="contenedor_filtrar_marca">
+                <label for="marca">Filtrar por Marca</label>
+                <select id="marca">
+                        <option selected disabled>...</option>
+                </select>
             </div>
         </div>
-        <div class="mascaras">
-            <h1>Mascaras</h1>
-            <div class="mascaras_tipo">
-                <li>Mascaras Oronasal </li>
-                <li>Mascaras Nasal</li>
-                <li>Mascaras Totalface</li>
-            </div>   
-        </div>
-        <div class="botton">
-            <button class="button button-agregar">AGREGAR PRODUCTOS</button>
-            <button class="button button-buscar">BUSCAR PRODUCTOS</button>
-            <button class="button button-borrar">QUITAR PRODUCTOS</button>
-            <button class="button button-filtrar">FILTRAR PRODUCTOS POR MARCA</button>
-            <button class="button button-filtrar">FILTRAR PRODUCTOS POR CATEGORIA</button>
-        </div>
+        <div id="container" class="container"></div>
     </main>
+    <footer></footer>
 </body>
 </html>
