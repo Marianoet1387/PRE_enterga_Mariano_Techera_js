@@ -103,8 +103,9 @@ div.importe {
 
 button {
     font-size: 10px;
-    width: 110px;
+    width: 120px;
     padding: 0px;
+    
 }
 .centrar-div{
     display: flex;
@@ -118,7 +119,7 @@ button {
     width: 100%;
     height: 50px;
     color: black;
-    background-color: rgb(230, 218, 218);
+    background-color: rgb(131, 126, 126);
 }
 footer{
     display: flex;
@@ -129,7 +130,7 @@ footer{
     color: dark;
 }
 button, button:not(:hover) {
-    background-color: darkslategray;
+    background-color: rgb(79, 87, 141);
     border-color: gray;
 }
 

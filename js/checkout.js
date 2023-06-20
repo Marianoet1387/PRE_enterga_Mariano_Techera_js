@@ -1,7 +1,5 @@
 const tbody = document.querySelector("tbody")
-const imgLogo = document.querySelector("#logo.logo")
-imgLogo.src = "img/carrito.png"
-
+const tbnComprar = document.querySelector("#btnComprar")
 function retornarTablasHTML(carrito) {
     return `<tr>
                 <td>${carrito.id}</td>
@@ -17,7 +15,6 @@ function cargarCarrito() {
 } 
 cargarCarrito()
 // btn de compra
-const tbnComprar = document.querySelector("#btnComprar")
 tbnComprar.addEventListener("click", ()=>{
     if (carrito.length > 0) {
         calculoTotal()
@@ -27,10 +24,6 @@ function calculoTotal() {
     total = carrito.reduce((acc, producto)=> acc + producto.importe, 0) 
     mostrarMensajes("El costo total de la compra es $: " + total)
 }
-const mostrarMensajes = (msg)=> {
-    const divMsg = document.querySelector('div.msg-carrito')
-    divMsg.textContent = msg || ''
-}
 //btn eliminar
 function borrarProductos(id) {
     const indice = carrito.findIndex((producto)=> {
@@ -38,6 +31,6 @@ function borrarProductos(id) {
     })  
     carrito.splice(indice, 1)
     localStorage.setItem("miCarrito", JSON.stringify(carrito)) 
-    mostrarMensajes("Se elimino el producto seleccionado")
+    mostrarMensajes(`Se elimino el producto seleccionado`)
     cargarCarrito()   
 }

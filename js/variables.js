@@ -13,11 +13,14 @@ const productos = [{id: 12345, nombre: "MASCARA ORONASAL  ", marca: "RESMED" , i
                    {id: 34589, nombre: "MASCARA ORAL ", marca: "RESMED", importe: 22_000, categoria: "MASCARAS", imagen:'img/mascaras_oral.png'},
                    {id: 90006, nombre: "G3 A20", marca: "BMC", importe: 100_000, categoria: "EQUIPOS AUTOCPAP", imagen:'img/equipos_autocpap_g3 a20.png'},
                    {id: 90007, nombre: "RESPIRONICS", marca: "PHILIPS", importe: 150_000, categoria: "EQUIPOS AUTOCPAP", imagen:'img/equipos_autocpap_respironics.png'}]
-
-
 const productosCategoria = [{categoria: "MASCARAS"},
                             {categoria: "EQUIPOS AUTOCPAP"},
                             {categoria: "EQUIPOS BIPAP"},
                             {categoria: "CPAP"},]
 const productosMarca = [{categoria: "RESMED"},
                         {categoria: "PHILIPS"},]
+const mostrarMensajes = (msg)=> {
+    const divMsg = document.querySelector('div.msg-carrito')
+    divMsg.textContent = msg || ''
+}
+                        

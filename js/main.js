@@ -50,7 +50,7 @@ function activarClickEnBotones() {
         boton.addEventListener("click", (e)=>{
             const productoElegido = productos.find((producto)=>producto.id === parseInt(e.target.id))
             carrito.push(productoElegido)
-            mostrarMensajes("El producto se agrego al carrito")   
+            mostrarMensajes(`El producto ${productoElegido.nombre} se guardó en el carrito...`)   
             console.clear()
             localStorage.setItem("miCarrito", JSON.stringify(carrito)) 
         })
@@ -60,7 +60,3 @@ function activarClickEnBotones() {
 imgLogo.addEventListener("mousemove", ()=>{  
     imgLogo.title = "Ir al carrito" 
 })
-const mostrarMensajes = (msg)=> {
-    const divMsg = document.querySelector('div.msg-carrito')
-    divMsg.textContent = msg || ''
-}
