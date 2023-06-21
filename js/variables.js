@@ -4,7 +4,7 @@ function recuperarLS() {
     }
 }  
 const carrito = recuperarLS() || []
-const productos = [{id: 12345, nombre: "MASCARA ORONASAL  ", marca: "RESMED" , importe: 20_000, categoria: "MASCARAS", imagen:'img/mascaras_oronasal.jpg'}, 
+const productos = [{id: 12345, nombre: "MASCARA ORONASAL  ", marca: "RESMED" , importe: 20_000, categoria: "MASCARAS", imagen:'img/mascaras_oronasal.png'}, 
                    {id: 23453, nombre: "MASCARA FACIAL  ", marca: "RESMED", importe: 25_000, categoria: "MASCARAS", imagen:'img/mascaras_facial.png'},
                    {id: 34569, nombre: "MASCARA NASAL  ", marca: "RESMED", importe: 22_000, categoria: "MASCARAS", imagen:'img/mascaras_nasal.png'},
                    {id: 90126, nombre: "AIRSENSE 10 AUTOSET", marca: "RESMED", importe: 100_000, categoria: "EQUIPOS AUTOCPAP", imagen:'img/equipos_autocpap_airsense.png'},
