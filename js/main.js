@@ -5,14 +5,6 @@ const selectMarca = document.querySelector("select#marca")
 const buscador= document.querySelector("#buscador")
 imgLogo.src = "img/carrito.png"
 
-const cargarFiltrosHTML = (select, array) => {
-    if (array.length > 0) {
-        array.forEach((elemento) => select.innerHTML += `<option> ${elemento.categoria}</option>`)
-       }
-}
-cargarFiltrosHTML(selectCategoria, productosCategoria)
-cargarFiltrosHTML(selectMarca, productosMarca)
-
 const retornoCardHTML = (producto) =>{ 
     return `<div class="div-card">
                 <img src="./${producto.imagen}" class="imagen">
@@ -51,7 +43,6 @@ function activarClickEnBotones() {
             const productoElegido = productos.find((producto)=>producto.id === parseInt(e.target.id))
             carrito.push(productoElegido)
             mostrarMensajes(`El producto ${productoElegido.nombre} se guardó en el carrito...`)   
-            console.clear()
             localStorage.setItem("miCarrito", JSON.stringify(carrito)) 
         })
     }
