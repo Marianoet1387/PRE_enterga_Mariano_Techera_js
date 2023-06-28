@@ -18,15 +18,13 @@ function cargarCarrito() {
 cargarCarrito()
 
 // btn de compra
-tbnComprar.addEventListener("click", ()=>{
+function calcularTotal() {
+  tbnComprar.addEventListener("click", ()=>{
     if (carrito.length > 0) {
-        calculoTotal()
+        total = carrito.reduce((acc, producto)=> acc + producto.importe, 0) 
+        mostrarMensajes("El costo total de la compra es $: " + total)
     }})
-
-function calculoTotal() {
-    total = carrito.reduce((acc, producto)=> acc + producto.importe, 0) 
-    mostrarMensajes("El costo total de la compra es $: " + total)
-}
+}calcularTotal()
 
 //btn eliminar
 function activarClickBotonesBorrar() {
