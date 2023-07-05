@@ -39,6 +39,7 @@ const retornarTablasHTML = (carrito) => {
                 <td>$ ${carrito.importe}</td>
                 <td><button id="${carrito.id}" class="button button-outline button-borrar">Quitar</button></td>
             </tr>`
+            
 }
 
 const cargarCarrito= () => {
@@ -49,29 +50,38 @@ const cargarCarrito= () => {
 cargarCarrito()
 
 // btn de compra
-const activarBtnComprar= () => {
+const mostrarMensajes = (msg)=> {
+    const divMsg = document.querySelector('div.msg-carrito')
+    divMsg.textContent = msg || ''
+} 
+const activarBtnComprar = () => {
     btnComprar.addEventListener("click", ()=>{
         if (carrito.length > 0) {
             calcularTotal()
-        }})
+        }else mostrarCalculoTotal()})
 }
 activarBtnComprar()
+
+const mostrarCalculoTotal  = ()=>{
+    let totalCarrito = carrito.reduce((acc, producto)=> acc + parseFloat(producto.importe), 0) 
+    mostrarMensajes("El costo total de la compra es $: " + totalCarrito) 
+   
+}
+mostrarCalculoTotal()
 
 const calcularTotal= () => {
     btnComprar.innerHTML =  animacionImg
     const timer = parseInt(Math.random() * 10000)
     setTimeout(() => {
-        total = carrito.reduce((acc, producto)=> acc + producto.importe, 0)
+        carrito.reduce((acc, producto)=> acc + parseFloat(producto.importe), 0) 
         alertaDosBtn()
         retornarBtnComprar()
     }, timer);
 }
 
-
-
 const alertaDosBtn= () => {
     Swal.fire({
-        title: '¿Confirmas tu compra?',
+        title: '¿Confirmas tu compra ?',
         showCancelButton: true,
         confirmButtonText: 'Confirmar',
         cancelButtonText: 'Cancelar',
@@ -80,6 +90,7 @@ const alertaDosBtn= () => {
             Swal.fire('Felicitaciones has comprado los productos', '', 'success')        
             localStorage.removeItem("miCarrito")
             tbody.innerHTML = ""
+            mostrarMensajes("No hay productos en el carrito, vuelva a la tienda... ")
         } else {
           Swal.fire('Sigue comprando!!', '', 'info')
         }
@@ -104,7 +115,8 @@ function activarClickBotonesBorrar() {
                     if (indice  > -1 ){
                         carrito.splice(indice, 1)
                         localStorage.setItem("miCarrito", JSON.stringify(carrito)) 
-                        cargarCarrito()   
+                        cargarCarrito()
+                        mostrarCalculoTotal()
                     }
                     mensajeToastEliminar()
                 }
