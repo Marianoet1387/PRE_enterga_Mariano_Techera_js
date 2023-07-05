@@ -65,7 +65,6 @@ activarBtnComprar()
 const mostrarCalculoTotal  = ()=>{
     let totalCarrito = carrito.reduce((acc, producto)=> acc + parseFloat(producto.importe), 0) 
     mostrarMensajes("El costo total de la compra es $: " + totalCarrito) 
-   
 }
 mostrarCalculoTotal()
 
