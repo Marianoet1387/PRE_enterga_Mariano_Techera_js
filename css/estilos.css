@@ -301,7 +301,7 @@ footer{
     75% {
               transform: translateX(-6px) rotate(-1.2deg);
     }
-  }
+}
   @keyframes wobble-hor-bottom {
     0%,
     100% {
@@ -323,8 +323,9 @@ footer{
     75% {
               transform: translateX(-6px) rotate(-1.2deg);
     }
-  }
-  @media only screen and (max-width: 580px) {
+}
+  
+@media only screen and (max-width: 580px) {
     *{
         margin: 10px;
     }

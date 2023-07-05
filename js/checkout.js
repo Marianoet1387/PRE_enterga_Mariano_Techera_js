@@ -29,7 +29,7 @@ const retornarHeader = () => {
                             <a href="index.html">
                                 <button class="button_volver" id="btnVolver">Seguir comprando</button>
                             </a>
-                        </div>    `
+                        </div>`
 }
 retornarHeader()
 
@@ -49,7 +49,6 @@ const cargarCarrito= () => {
 cargarCarrito()
 
 // btn de compra
-
 const activarBtnComprar= () => {
     btnComprar.addEventListener("click", ()=>{
         if (carrito.length > 0) {
@@ -67,6 +66,8 @@ const calcularTotal= () => {
         retornarBtnComprar()
     }, timer);
 }
+
+
 
 const alertaDosBtn= () => {
     Swal.fire({
@@ -111,6 +112,7 @@ function activarClickBotonesBorrar() {
         })
     }  
 }
+
 const mensajeToastEliminar= () => {
     Toastify({
         text: `El producto se eliminó del carrito.`,
@@ -125,3 +127,4 @@ const mensajeToastEliminar= () => {
         }
       }).showToast();
 }
+
